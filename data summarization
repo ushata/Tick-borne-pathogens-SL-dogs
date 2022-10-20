@@ -1,0 +1,44 @@
+#function to calculate ci 95%
+
+ci_test <- function(a, b, p = 0.05) {
+                   upper <-  ((binom.test(a, b, p,  alternative = "two.sided"))[["conf.int"]][2])
+                    lower <-  ((binom.test(a, b, p,  alternative = "two.sided"))[["conf.int"]][1])
+                 ci <- rbind(lower[1], upper[1])
+ 
+              print(ci) 
+}
+#calculate totals
+
+breed_count2 <- ticks_clean%>%
+                      tabyl(dog_sex,tbp_hcanis)%>%
+                      adorn_totals(where = "col")
+
+#calculate percentages
+breed_count3 <- ticks_clean%>%
+                    tabyl(dog_sex,tbp_hcanis)%>%
+  adorn_percentages(denominator = "row", na.rm = FALSE)
+
+#rename columns
+colnames = c("dog_breed", "uninfected", "infected","total", "per_unin", "per_in")
+
+#bind columns
+
+breed_count <- cbind(breed_count2,breed_count3[,2:3])
+colnames(breed_count) = colnames
+
+#convert to data frame
+
+breed_count <- breed_count%>%
+  as.data.frame()
+
+#applying the ci function to all rows
+
+test_1<-  mapply(ci_test, breed_count$infected, breed_count$total)
+test_1 <- t(test_1)
+
+#binding the columns to the data frame
+
+breed_count <- cbind(breed_count,test_1)
+colnames(breed_count) = c("dog_breed", "uninfected", "infected","total", "per_unin", "per_in", "lowerci", "upperci")
+
+print(breed_count)
