@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r include=FALSE}
 #Load data
-ticks_data <- read.csv("D:/TBP_Data Analysis/data/tbd_data.csv")
+ticks_data <- read.csv("tbd_data.csv")
 
 ```
 
