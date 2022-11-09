@@ -1,18 +1,3 @@
---- 
-author: "Ushani Atapattu"
-date: "`r Sys.Date()`"
-editor_options: 
-  markdown: 
-    wrap: 80
-output: 
-  code_folding: show
-  html_document: 
-  number_sections: true
-  toc: true
-  toc_float: true
-title: "Molecular diagnostic survey of the prevalence and associated risk factors for tick-borne pathogens in pet dogs in Sri Lanka"
-
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
