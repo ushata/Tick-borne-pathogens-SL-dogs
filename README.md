@@ -3,4 +3,4 @@ Supplementary information for the prevalence and risk factor study on canine tic
 
 Raw data used in this study can be found in **tbd_data.csv**
 
-The R Markdown containing the R code for analysis is in **TBP_paper_code.Rmd**
+The R Markdown containing the R code for analysis is in **TBP_paper code.Rmd**
