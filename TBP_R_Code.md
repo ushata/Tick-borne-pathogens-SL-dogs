@@ -1,18 +1,5 @@
----
-Title: "R code - TBP in Sri Lankan dogs"
-author: "Ushani Atapattu"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# R code - Tick-borne pathogens Sri Lanka
 
 ```{r}
 
